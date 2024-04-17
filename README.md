@@ -2,7 +2,7 @@
 
 # curriculo
 
-## Informações passoais e profssionais
+## Informações pessoais, conhecimentos e objetivos
 
 #### Página Sobre
 
