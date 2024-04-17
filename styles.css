@@ -60,13 +60,77 @@ body.active main {
     /* Ajusta a margem esquerda do main quando o nav estiver expandido */
 }
 
-#home-description, #home-social{
-    padding: 1%;
-    
+#home-social{
+    margin-left: 5%;
 }
 
-.description{
+
+
+#home-description {
+    position: relative;
+    padding: 3%;
+    margin: 10px;
+    background: #d1cde4;
+    /* Cor de fundo para contraste */
+    color: black;
+    /* Cor do texto */
+    border: 2px solid transparent;
+    /* Preparar para o efeito de borda */
+    overflow: hidden;
+    /* Impede que o pseudo-elemento saia do container */
+
+}
+
+#home-description::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    /*left: 0; */
+    width: 95%;
+    height: 90%;
+    pointer-events: all;
+    border-radius: 8px;
+    /* Suaviza as bordas */
+    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7),
+        0 0 20px 6px rgba(0, 255, 255, 0), 0 0 20px 6px rgba(255, 0, 255, 0.7);
+    animation: neonBorderAnimation 5s linear infinite;
+}
+
+@keyframes neonBorderAnimation {
+    0% {
+        box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7),
+            0 0 20px 6px rgba(0, 255, 255, 0);
+    }
+
+    20% {
+        box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.7),
+            0 0 20px 6px rgba(255, 0, 255, 0);
+    }
+
+    40% {
+        box-shadow: 0 0 10px 2px rgba(238, 255, 0, 0.7),
+            0 0 20px 6px rgba(255, 0, 255, 0);
+    }
+
+    60% {
+        box-shadow: 0 0 10px 2px rgba(21, 255, 0, 0.7),
+            0 0 20px 6px rgba(255, 0, 255, 0);
+    }
+
+    80% {
+        box-shadow: 0 0 10px 2px rgba(255, 60, 0, 0.7),
+            0 0 20px 6px rgba(255, 0, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 10px 2px rgba(255, 0, 21, 0.7),
+            0 0 20px 6px rgba(0, 255, 255, 0);
+    }
+}
+
+.description {
     margin-bottom: 2%;
+    /* width: 80vh; */
 }
 
 #obj-description,
@@ -74,17 +138,17 @@ body.active main {
     padding: 1%;
 }
 
-#obj-list>ul>li{
+#obj-list>ul>li {
     margin-top: 1%;
 }
 
-#home-social{
+#home-social {
     display: flex;
     justify-content: space-between;
     width: 30%;
 }
 
-.orange{
+.orange {
     color: rgb(255, 115, 0);
 }
 
@@ -115,21 +179,21 @@ body.active main {
     padding: 0.4rem;
     border-radius: 0.5rem;
     animation: rotateAnimation 5s linear infinite;
-        /* Definindo a animação */
+    /* Definindo a animação */
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotateY(0deg);
     }
-    
-    @keyframes rotateAnimation {
-        0% {
-            transform: rotateY(0deg);
-        }
-    
-        /* Define a rotação inicial */
-        100% {
-            transform: rotateY(360deg);
-        }
-    
-        /* Define a rotação final */
+
+    /* Define a rotação inicial */
+    100% {
+        transform: rotateY(360deg);
     }
+
+    /* Define a rotação final */
+}
 
 .sidebar-links {
     display: flex;
@@ -224,6 +288,7 @@ body.active .toggle-btn {
     border-top: 1px solid rgb(211, 211, 211);
     margin-bottom: 2rem;
 }
+
 .user-avatar {
     width: 48px;
     height: 48px;
@@ -423,7 +488,7 @@ body.active .toggle-btn {
         transform: translateX(-50px);
     }
 
-    100% {  
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
