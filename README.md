@@ -4,7 +4,7 @@
 
 ## Informações pessoais, conhecimentos e objetivos
 
-#### Página Sobre
+### Página Sobre
 
 ![Página Inicial](./assets/image/index.jpg) ![Nav Expandido](./assets/image/index_nav-expandido.jpg)
 
