@@ -1,6 +1,6 @@
 # av_final_front_end_I - Turma 20
 
-# curriculo
+# currÍculo
 
 ## Informações pessoais, conhecimentos e objetivos
 
