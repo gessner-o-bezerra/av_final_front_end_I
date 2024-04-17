@@ -9,14 +9,14 @@
 ## Pagina Sobre
 
 <div style="display: flex; justify-content: space-around; flex-direction: row;">
-<img src=./image/index.jpg> <br />
-<img src=./image/index_nav_expandido.jpg> <br />
+<img src=./assets/image/index.jpg> <br />
+<img src=./assets/image/index_nav_expandido.jpg> <br />
 </div>
 
 ## Pagina Conhecimentos
 
-<img src=./image/conhecimento.jpg> <br />
+<img src=./assets/image/conhecimento.jpg> <br />
 
 ## Pagina Objetivos
 
-<img src=./image/objetivos.jpg> <br />
+<img src=./assets/image/objetivos.jpg> <br />
