@@ -4,24 +4,14 @@
 
 ## Informações passoais e profssionais
 
-<p style="display: flex; text-align=center;">
+#### Página Sobre
 
-## Pagina Sobre
+![Página Inicial](./assets/image/index.jpg) ![Nav Expandido](./assets/image/index_nav-expandido.jpg)
 
-</P>
+### Página Conhecimentos
 
-<div style="display: flex; justify-content: space-around; flex-direction: row;">
-<img src=./assets/image/index.jpg> <br />
-<img src=./assets/image/index_nav-expandido.jpg> <br />
-</div>
+![Conhecimentos](./assets/image/conhecimento.jpg)
 
-<p style="display: flex; text-align=center;">
-## Pagina Conhecimentos
-</P>
+### Página Objetivos
 
-<img src=./assets/image/conhecimento.jpg> <br />
-
-<p style="display: flex; text-align=center;">
-## Pagina Objetivos
-</P>
-<img src=./assets/image/objetivos.jpg> <br />
+![Objetivos](./assets/image/objetivos.jpg)
