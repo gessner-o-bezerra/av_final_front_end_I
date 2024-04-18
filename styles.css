@@ -94,7 +94,8 @@ body.active main {
     /* Suaviza as bordas */
     box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7),
         0 0 20px 6px rgba(0, 255, 255, 0), 0 0 20px 6px rgba(255, 0, 255, 0.7);
-    animation: neonBorderAnimation 5s linear infinite;
+    animation: neonBorderAnimation 5s linear 4s infinite;
+    visibility: hidden;
 }
 
 @keyframes neonBorderAnimation {
@@ -104,26 +105,31 @@ body.active main {
     }
 
     20% {
+        visibility: visible;
         box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.7),
             0 0 20px 6px rgba(255, 0, 255, 0);
     }
 
     40% {
+        visibility: visible;
         box-shadow: 0 0 10px 2px rgba(238, 255, 0, 0.7),
             0 0 20px 6px rgba(255, 0, 255, 0);
     }
 
     60% {
+        visibility: visible;
         box-shadow: 0 0 10px 2px rgba(21, 255, 0, 0.7),
             0 0 20px 6px rgba(255, 0, 255, 0);
     }
 
     80% {
+        visibility: visible;
         box-shadow: 0 0 10px 2px rgba(255, 60, 0, 0.7),
             0 0 20px 6px rgba(255, 0, 255, 0);
     }
 
     100% {
+        visibility: visible;
         box-shadow: 0 0 10px 2px rgba(255, 0, 21, 0.7),
             0 0 20px 6px rgba(0, 255, 255, 0);
     }
@@ -411,7 +417,7 @@ body.active .toggle-btn {
     background-color: #c0eca2;
     transition: width 0.5s ease-in-out;
 }
-
+/*  */
 #anime-A {
     animation: myAnimA 2s ease 0s 1 normal forwards;
 }
@@ -445,7 +451,7 @@ body.active .toggle-btn {
     animation: myAnimF 2s ease 6s 1 normal forwards;
     visibility: hidden;
 }
-
+/*  */
 #anime-G {
     margin-top: 1%;
     animation: myAnimG 2s ease 7s 1 normal forwards;
