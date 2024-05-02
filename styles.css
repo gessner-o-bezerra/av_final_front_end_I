@@ -28,8 +28,9 @@ nav {
     width: 5rem;
     /* Largura inicial do nav */
     height: calc(100vh - 0.75rem);
-    background-color: #ffffff;
+    background-color: #4b504b;
     padding: 1rem 0.75rem;
+    color: white;
     border-radius: 0.75rem;
     display: flex;
     flex-direction: column;
@@ -212,10 +213,11 @@ body.active main {
     gap: 0.6rem;
     height: 40%;
 }
-
-nav>.sidebar-links {
-    border-top: 1px solid rgb(211, 211, 211);
-}
+/* *********************************** */
+/* nav>.sidebar-links {
+    background-color: #ffffff;
+    border-top: 1px solid #ffffff;
+} */
 
 body.active .sidebar-links,
 body.active .sidebar-header,
@@ -226,7 +228,7 @@ body.active .user-profile {
 
 .link {
     display: flex;
-    padding: 0.6rem;
+    padding: 0.rem;
     border-radius: 0.5rem;
     gap: 1.5rem;
 }
@@ -243,7 +245,14 @@ nav:hover .hidden {
 
 .link:hover,
 .link.active:hover {
-    background-color: #d1cde4;
+    background-color: #b8dddd;
+    width: 100%;
+    color: #f0680e;
+}
+
+.grow:hover {
+    background-color: none;
+    color: #f0680e;
 }
 
 .social {
@@ -259,13 +268,18 @@ nav:hover .hidden {
     /* Aumenta o tamanho do elemento em 10% no hover */
 }
 
-.link.active {
-    background-color: #f4f4f6;
-}
+/* .link.active {
+    background-color: #d1cde4;
+} */
 
 .link>img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
+}
+
+img.icon{
+    width: 30px;
+    height: 30px;
 }
 
 .sidebar-bottom .sidebar-links {
