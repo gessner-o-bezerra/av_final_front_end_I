@@ -39,9 +39,18 @@ nav {
 
 }
 
+/* Remova a regra de estilo do hover fora da media query */
 nav:hover {
-    width: 20rem;
+    width: 15rem;
     /* Expande o nav quando o mouse está sobre ele */
+}
+
+/* Adicione a regra de estilo do hover dentro da media query para telas menores que 500px */
+@media only screen and (max-width: 700px) {
+    nav:hover {
+        width: 5rem;
+        /* Mantém o tamanho original do nav quando o mouse está sobre ele em telas menores que 500px */
+    }
 }
 
 main {
@@ -53,9 +62,26 @@ main {
 
 }
 
+@media only screen and (max-width: 700px) {
+    main {
+        margin-top: 15%;
+        font-size: 80%
+    }
+
+    ;
+    /* Tamanho menor da fonte para telas menores */
+}
+
 nav:hover+main {
     margin-left: 23rem;
     /* Ajusta a margem esquerda do main quando o nav estiver expandido */
+}
+
+@media only screen and (max-width: 700px) {
+    nav:hover+main {
+        margin-left: 8rem;
+        /* Ajusta a margem esquerda do main quando o nav estiver expandido */
+    }
 }
 
 body.active main {
@@ -70,6 +96,8 @@ body.active main {
 
 
 #home-description {
+    display: flex;
+    flex-direction: column;
     position: relative;
     padding: 3%;
     margin-left: 10px;
@@ -89,7 +117,7 @@ body.active main {
     position: absolute;
     top: 2px;
     width: 95%;
-    height: 90%;
+    height: 95%;
     pointer-events: all;
     border-radius: 8px;
     /* Suaviza as bordas */
@@ -97,6 +125,12 @@ body.active main {
         0 0 20px 6px rgba(0, 255, 255, 0), 0 0 20px 6px rgba(255, 0, 255, 0.7);
     animation: neonBorderAnimation 5s linear 4s infinite;
     visibility: hidden;
+}
+
+@media only screen and (min-width: 700px) {
+    #home-description {
+        font-size: 50%;
+    }
 }
 
 @keyframes neonBorderAnimation {
@@ -166,10 +200,14 @@ body.active main {
     justify-content: space-between;
     align-items: baseline;
     overflow: hidden;
+
+    @media only screen and (max-width: 700px) {
+        font-size: 50%;
+        /* Tamanho menor da fonte para telas menores */
+    }
 }
 
 .sidebar-header {
-    display: flex;
     margin-bottom: 2rem;
 }
 
@@ -180,7 +218,8 @@ body.active main {
     gap: 1.25rem;
 }
 
-.logo-wrapper>img {
+.logo-wrapper>img,
+.logo-wrapper>a>img {
     width: 3.25rem;
     height: 3.25rem;
     background-color: transparent;
@@ -213,11 +252,7 @@ body.active main {
     gap: 0.6rem;
     height: 40%;
 }
-/* *********************************** */
-/* nav>.sidebar-links {
-    background-color: #ffffff;
-    border-top: 1px solid #ffffff;
-} */
+
 
 body.active .sidebar-links,
 body.active .sidebar-header,
@@ -237,10 +272,33 @@ body.active .user-profile {
     display: none;
 }
 
-nav:hover .hidden {
-    display: inline;
-    /* Mostra os elementos com a classe .hidden quando o nav estiver expandido */
+/* Esconde a imagem dentro do link quando a tela for maior que 700px */
+@media only screen and (min-width: 700px) {
+    .logo-wrapper a img {
+        display: none;
+    }
+}
 
+/* Mostra a imagem dentro do link quando a tela for menor ou igual a 700px */
+@media only screen and (max-width: 700px) {
+    .logo-wrapper a img {
+        display: inline;
+    }
+}
+
+/* Esconde a imagem fora do link quando a tela for menor que 700px */
+@media only screen and (max-width: 700px) {
+    .logo-wrapper img#grow-logo {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+
+    nav:hover .hidden {
+        /* Mostra os elementos com a classe .hidden quando o nav estiver expandido e a tela tiver largura acima de 700px */
+        display: inline;
+    }
 }
 
 .link:hover,
@@ -268,18 +326,16 @@ nav:hover .hidden {
     /* Aumenta o tamanho do elemento em 10% no hover */
 }
 
-/* .link.active {
-    background-color: #d1cde4;
-} */
-
 .link>img {
     width: 30px;
     height: 30px;
+
 }
 
-img.icon{
+img.icon {
     width: 30px;
     height: 30px;
+
 }
 
 .sidebar-bottom .sidebar-links {
@@ -328,13 +384,25 @@ body.active .toggle-btn {
 }
 
 .user-avatar:hover {
-    scale: 2.2;
+    scale: 1.1;
+}
+
+@media only screen and (min-width: 700px) {
+    .user-avatar:hover {
+        scale: 2.2;
+    }
 }
 
 .user-details {
     align-self: center;
     overflow: hidden;
     padding-left: 3%;
+}
+
+@media only screen and (max-width: 700px) {
+    .user-details {
+        display: none;
+    }
 }
 
 .user-details .username {
@@ -358,11 +426,18 @@ body.active .toggle-btn {
 }
 
 .progress-bar {
-    width: 30%;
-    height: 10px;
+    width: 50%;
+    position: absolute;
+    margin-left: 0;
+    z-index: -1;
+    height: 20px;
     background-color: #f0f0f0;
     border-radius: 5px;
     overflow: hidden;
+
+    @media only screen and (max-width: 468px) {
+        height: 20px;
+    }
 }
 
 .progress-A {
@@ -431,57 +506,112 @@ body.active .toggle-btn {
     background-color: #c0eca2;
     transition: width 0.5s ease-in-out;
 }
+
 /*  */
 #anime-A {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
     animation: myAnimA 2s ease 0s 1 normal forwards;
 }
 
+
+
 #anime-B {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
     animation: myAnimB 2s ease 2s 1 normal forwards;
     visibility: hidden;
+
+
 }
 
 #anime-C {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
     animation: myAnimC 2s ease 3s 1 normal forwards;
     visibility: hidden;
+
+
 }
 
 #anime-D {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
     animation: myAnimD 2s ease 4s 1 normal forwards;
     visibility: hidden;
+
+
 }
 
 #anime-E {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
     animation: myAnimE 2s ease 5s 1 normal forwards;
     visibility: hidden;
+
+
 }
 
 #anime-F {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
     animation: myAnimF 2s ease 6s 1 normal forwards;
     visibility: hidden;
+
+
 }
+
 /*  */
 #anime-G {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
     animation: myAnimG 2s ease 7s 1 normal forwards;
     visibility: hidden;
+
+
 }
 
 #anime-H {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
     animation: myAnimH 2s ease 8s 1 normal forwards;
     visibility: hidden;
+
+
 }
 
 #anime-I {
-    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
     animation: myAnimI 2s ease 9s 1 normal forwards;
     visibility: hidden;
+}
+
+@media only screen and (max-width: 468px) {
+
+    #anime-A,
+    #anime-B,
+    #anime-C,
+    #anime-D,
+    #anime-E,
+    #anime-F,
+    #anime-G,
+    #anime-H {
+        margin-bottom: 10%;
+    }
+}
+
+.size-conhecimento {
+    font-size: 70%;
 }
 
 @keyframes myAnimA {
