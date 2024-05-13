@@ -3,729 +3,687 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    background-color: #d1cde4;
-    padding: 0.375rem;
-    font-family: Poppins, sans-serif;
-    position: relative;
+  height: 100vh;
+  background-color: #d1cde4;
+  padding: 0.375rem;
+  font-family: Poppins, sans-serif;
+  position: relative;
 }
 
 button,
 a {
-    all: unset;
-    font: inherit;
-    cursor: pointer;
+  all: unset;
+  font: inherit;
+  cursor: pointer;
 }
 
 nav {
-    position: fixed;
-    width: 5rem;
-    /* Largura inicial do nav */
-    height: calc(100vh - 0.75rem);
-    background-color: #4b504b;
-    padding: 1rem 0.75rem;
-    color: white;
-    border-radius: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    transition: width 700ms ease;
-    /* Adicionando transição suavizada de largura */
-
+  position: fixed;
+  width: 5rem;
+  /* Largura inicial do nav */
+  height: calc(100vh - 0.75rem);
+  background-color: #4b504b;
+  padding: 1rem 0.75rem;
+  color: white;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: width 700ms ease;
+  /* Adicionando transição suavizada de largura */
 }
 
 /* Remova a regra de estilo do hover fora da media query */
 nav:hover {
-    width: 15rem;
-    /* Expande o nav quando o mouse está sobre ele */
+  width: 15rem;
+  /* Expande o nav quando o mouse está sobre ele */
 }
 
 /* Adicione a regra de estilo do hover dentro da media query para telas menores que 500px */
 @media only screen and (max-width: 700px) {
-    nav:hover {
-        width: 5rem;
-        /* Mantém o tamanho original do nav quando o mouse está sobre ele em telas menores que 500px */
-    }
+  nav:hover {
+    width: 5rem;
+    /* Mantém o tamanho original do nav quando o mouse está sobre ele em telas menores que 500px */
+  }
 }
 
 main {
-    margin-top: 10%;
+  margin-top: 10%;
+  margin-left: 8rem;
+  /* Defina a margem esquerda padrão do main */
+  transition: margin-left 700ms ease;
+  /* Adicione uma transição para suavizar a animação */
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    margin-top: 15%;
+    font-size: 80%;
+  }
+
+  /* Tamanho menor da fonte para telas menores */
+}
+
+nav:hover + main {
+  margin-left: 23rem;
+  /* Ajusta a margem esquerda do main quando o nav estiver expandido */
+}
+
+@media only screen and (max-width: 700px) {
+  nav:hover + main {
     margin-left: 8rem;
-    /* Defina a margem esquerda padrão do main */
-    transition: margin-left 700ms ease;
-    /* Adicione uma transição para suavizar a animação */
-
-}
-
-@media only screen and (max-width: 700px) {
-    main {
-        margin-top: 15%;
-        font-size: 80%
-    }
-
-    ;
-    /* Tamanho menor da fonte para telas menores */
-}
-
-nav:hover+main {
-    margin-left: 23rem;
     /* Ajusta a margem esquerda do main quando o nav estiver expandido */
-}
-
-@media only screen and (max-width: 700px) {
-    nav:hover+main {
-        margin-left: 8rem;
-        /* Ajusta a margem esquerda do main quando o nav estiver expandido */
-    }
+  }
 }
 
 body.active main {
-    margin-left: 200rem;
-    /* Ajusta a margem esquerda do main quando o nav estiver expandido */
+  margin-left: 200rem;
+  /* Ajusta a margem esquerda do main quando o nav estiver expandido */
 }
-
-#home-social {
-    margin-left: 5%;
-}
-
-
 
 #home-description {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 3%;
-    margin-left: 10px;
-    background: #d1cde4;
-    /* Cor de fundo para contraste */
-    color: black;
-    /* Cor do texto */
-    border: 2px solid transparent;
-    /* Preparar para o efeito de borda */
-    overflow: hidden;
-    /* Impede que o pseudo-elemento saia do container */
-
+  width: 80vw;
+  height: 15%;
+  background: #d1cde4;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px 13px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 #home-description::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    width: 95%;
-    height: 95%;
-    pointer-events: all;
-    border-radius: 8px;
-    /* Suaviza as bordas */
-    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7),
-        0 0 20px 6px rgba(0, 255, 255, 0), 0 0 20px 6px rgba(255, 0, 255, 0.7);
-    animation: neonBorderAnimation 5s linear 4s infinite;
-    visibility: hidden;
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-image: linear-gradient(
+    360deg,
+    rgb(0, 183, 255),
+    rgb(255, 48, 255),
+    rgba(238, 255, 0, 0.7),
+    rgba(21, 255, 0, 0.7),
+    rgba(255, 60, 0, 0.7)
+  );
+  height: 60%;
+  animation: rotBGimg 5s linear infinite;
+  transition: all 0.5s linear;
 }
 
-@media only screen and (min-width: 700px) {
-    #home-description {
-        font-size: 50%;
-    }
+@media only screen and (max-width: 700px) {
+  #home-description {
+    font-size: 80%;
+  }
 }
 
-@keyframes neonBorderAnimation {
-    0% {
-        box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7),
-            0 0 20px 6px rgba(0, 255, 255, 0);
-    }
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
 
-    20% {
-        visibility: visible;
-        box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.7),
-            0 0 20px 6px rgba(255, 0, 255, 0);
-    }
-
-    40% {
-        visibility: visible;
-        box-shadow: 0 0 10px 2px rgba(238, 255, 0, 0.7),
-            0 0 20px 6px rgba(255, 0, 255, 0);
-    }
-
-    60% {
-        visibility: visible;
-        box-shadow: 0 0 10px 2px rgba(21, 255, 0, 0.7),
-            0 0 20px 6px rgba(255, 0, 255, 0);
-    }
-
-    80% {
-        visibility: visible;
-        box-shadow: 0 0 10px 2px rgba(255, 60, 0, 0.7),
-            0 0 20px 6px rgba(255, 0, 255, 0);
-    }
-
-    100% {
-        visibility: visible;
-        box-shadow: 0 0 10px 2px rgba(255, 0, 21, 0.7),
-            0 0 20px 6px rgba(0, 255, 255, 0);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
+
+#home-description::after {
+  content: "";
+  position: absolute;
+
+  background: #e2e0ee;
+  inset: 5px;
+  border-radius: 15px;
+}
+
 
 .description {
-    margin-bottom: 2%;
-    margin-left: 2%;
+  width: 80%;
+  margin-bottom: 2%;
+  color: black;
+  margin-left: 5%;
+  font-size: medium;
+  z-index: 1;
 }
 
 #obj-description,
 #obj-list {
-    padding: 1%;
+  padding: 1%;
 }
 
-#obj-list>ul>li {
-    margin-top: 1%;
+#obj-list > ul > li {
+  margin-top: 1%;
 }
 
 #home-social {
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-left: 5%;
+  margin-top: 2%;
 }
 
 .orange {
-    color: rgb(255, 115, 0);
+  color: rgb(255, 115, 0);
 }
 
 .sidebar-header,
 .sidebar-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  overflow: hidden;
 
-    @media only screen and (max-width: 700px) {
-        font-size: 50%;
-        /* Tamanho menor da fonte para telas menores */
-    }
+  @media only screen and (max-width: 700px) {
+    font-size: 50%;
+    /* Tamanho menor da fonte para telas menores */
+  }
 }
 
 .sidebar-header {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .logo-wrapper {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 1.25rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.logo-wrapper>img,
-.logo-wrapper>a>img {
-    width: 3.25rem;
-    height: 3.25rem;
-    background-color: transparent;
-    padding: 0.4rem;
-    border-radius: 0.5rem;
-    animation: rotateAnimation 5s linear infinite;
-    /* Definindo a animação */
+.logo-wrapper > img,
+.logo-wrapper > a > img {
+  width: 3.25rem;
+  height: 3.25rem;
+  background-color: transparent;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  animation: rotateAnimation 5s linear infinite;
+  /* Definindo a animação */
 }
 
 @keyframes rotateAnimation {
-    0% {
-        transform: rotateY(0deg);
-        /* Define a rotação inicial */
-    }
+  0% {
+    transform: rotateY(0deg);
+    /* Define a rotação inicial */
+  }
 
-
-    100% {
-        transform: rotateY(360deg);
-        /* Define a rotação final */
-    }
-
-
+  100% {
+    transform: rotateY(360deg);
+    /* Define a rotação final */
+  }
 }
 
 .sidebar-links {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    margin-bottom: auto;
-    gap: 0.6rem;
-    height: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-bottom: auto;
+  gap: 0.6rem;
+  height: 40%;
 }
-
 
 body.active .sidebar-links,
 body.active .sidebar-header,
 body.active .user-profile {
-    justify-content: start;
-    align-items: stretch;
+  justify-content: start;
+  align-items: stretch;
 }
 
 .link {
-    display: flex;
-    padding: 0.rem;
-    border-radius: 0.5rem;
-    gap: 1.5rem;
+  display: flex;
+  padding: 0rem;
+  border-radius: 0.5rem;
+  gap: 1.5rem;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Esconde a imagem dentro do link quando a tela for maior que 700px */
 @media only screen and (min-width: 700px) {
-    .logo-wrapper a img {
-        display: none;
-    }
+  .logo-wrapper a img {
+    display: none;
+  }
 }
 
 /* Mostra a imagem dentro do link quando a tela for menor ou igual a 700px */
 @media only screen and (max-width: 700px) {
-    .logo-wrapper a img {
-        display: inline;
-    }
+  .logo-wrapper a img {
+    display: inline;
+  }
 }
 
 /* Esconde a imagem fora do link quando a tela for menor que 700px */
 @media only screen and (max-width: 700px) {
-    .logo-wrapper img#grow-logo {
-        display: none;
-    }
+  .logo-wrapper img#grow-logo {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 700px) {
-
-    nav:hover .hidden {
-        /* Mostra os elementos com a classe .hidden quando o nav estiver expandido e a tela tiver largura acima de 700px */
-        display: inline;
-    }
+  nav:hover .hidden {
+    /* Mostra os elementos com a classe .hidden quando o nav estiver expandido e a tela tiver largura acima de 700px */
+    display: inline;
+  }
 }
 
 .link:hover,
 .link.active:hover {
-    background-color: #b8dddd;
-    width: 100%;
-    color: #f0680e;
+  background-color: #b8dddd;
+  width: 100%;
+  color: #f0680e;
 }
 
 .grow:hover {
-    background-color: none;
-    color: #f0680e;
+  background-color: none;
+  color: #f0680e;
 }
 
 .social {
-    background-color: #d1cde4;
-    transition: transform 0.3s ease;
-    /* Adiciona uma transição suave para o efeito */
-    width: 100%;
-    height: 100%;
+  background-color: #d1cde4;
+  transition: transform 0.3s ease;
+  /* Adiciona uma transição suave para o efeito */
+  width: 100%;
+  height: 100%;
 }
 
 .social:hover {
-    transform: scale(2.2);
-    /* Aumenta o tamanho do elemento em 10% no hover */
+  transform: scale(2.2);
+  /* Aumenta o tamanho do elemento em 10% no hover */
 }
 
-.link>img {
-    width: 30px;
-    height: 30px;
-
+.link > img {
+  width: 30px;
+  height: 30px;
 }
 
 img.icon {
-    width: 30px;
-    height: 30px;
-
+  width: 30px;
+  height: 30px;
 }
 
 .sidebar-bottom .sidebar-links {
-    padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .toggle-btn {
-    position: absolute;
-    top: 10px;
-    right: -50px;
-    padding: 0.5rem;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.25s ease;
+  position: absolute;
+  top: 10px;
+  right: -50px;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.25s ease;
 }
 
 body.active .toggle-btn {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .user-profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgb(211, 211, 211);
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgb(211, 211, 211);
+  margin-bottom: 2rem;
 }
 
 .user-avatar {
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    transition: scale 0.2s ease;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: scale 0.2s ease;
 }
 
 .user-avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .user-avatar:hover {
-    scale: 1.1;
+  scale: 1.1;
 }
 
 @media only screen and (min-width: 700px) {
-    .user-avatar:hover {
-        scale: 2.2;
-    }
+  .user-avatar:hover {
+    scale: 2.2;
+  }
 }
 
 .user-details {
-    align-self: center;
-    overflow: hidden;
-    padding-left: 3%;
+  align-self: center;
+  overflow: hidden;
+  padding-left: 3%;
 }
 
 @media only screen and (max-width: 700px) {
-    .user-details {
-        display: none;
-    }
+  .user-details {
+    display: none;
+  }
 }
 
 .user-details .username {
-    font-size: 0.85rem;
-    font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .user-details .user-email {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .imagem-backgrownd {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(90deg);
-    z-index: -999;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(90deg);
+  z-index: -999;
 }
 
 .progress-bar {
-    width: 50%;
-    position: absolute;
-    margin-left: 0;
-    z-index: -1;
-    height: 20px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    overflow: hidden;
+  width: 50%;
+  position: absolute;
+  margin-left: 0;
+  z-index: -1;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
 
-    @media only screen and (max-width: 468px) {
-        height: 20px;
-    }
+  @media only screen and (max-width: 468px) {
+    height: 20px;
+  }
 }
 
 .progress-A {
-    width: 40%;
-    /* Define o progresso da barra */
-    height: 100%;
-    background-color: #f0680e;
-    /* Cor da barra de progresso */
-    transition: width 0.5s ease-in-out;
-    /* Adiciona uma transição suave */
+  width: 40%;
+  /* Define o progresso da barra */
+  height: 100%;
+  background-color: #f0680e;
+  /* Cor da barra de progresso */
+  transition: width 0.5s ease-in-out;
+  /* Adiciona uma transição suave */
 }
 
 .progress-B {
-    width: 40%;
-    height: 100%;
-    background-color: #f0680e;
-    transition: width 0.5s ease-in-out;
+  width: 40%;
+  height: 100%;
+  background-color: #f0680e;
+  transition: width 0.5s ease-in-out;
 }
 
 .progress-C {
-    width: 50%;
-    height: 100%;
-    background-color: #007bff;
-    transition: width 0.5s ease-in-out;
+  width: 50%;
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.5s ease-in-out;
 }
 
 .progress-D {
-    width: 80%;
-    height: 100%;
-    background-color: #c0eca2;
-    transition: width 0.5s ease-in-out;
+  width: 80%;
+  height: 100%;
+  background-color: #c0eca2;
+  transition: width 0.5s ease-in-out;
 }
 
 .progress-E {
-    width: 70%;
-    height: 100%;
-    background-color: #c0eca2;
-    transition: width 0.5s ease-in-out;
+  width: 70%;
+  height: 100%;
+  background-color: #c0eca2;
+  transition: width 0.5s ease-in-out;
 }
 
 .progress-F {
-    width: 50%;
-    height: 100%;
-    background-color: #007bff;
-    transition: width 0.5s ease-in-out;
+  width: 50%;
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.5s ease-in-out;
 }
 
 .progress-G {
-    width: 45%;
-    height: 100%;
-    background-color: #f0b30e;
-    transition: width 0.5s ease-in-out;
+  width: 45%;
+  height: 100%;
+  background-color: #f0b30e;
+  transition: width 0.5s ease-in-out;
 }
 
 .progress-H {
-    width: 80%;
-    height: 100%;
-    background-color: #c0eca2;
-    transition: width 0.5s ease-in-out;
-
+  width: 80%;
+  height: 100%;
+  background-color: #c0eca2;
+  transition: width 0.5s ease-in-out;
 }
 
 .progress-I {
-    width: 70%;
-    height: 100%;
-    background-color: #c0eca2;
-    transition: width 0.5s ease-in-out;
+  width: 70%;
+  height: 100%;
+  background-color: #c0eca2;
+  transition: width 0.5s ease-in-out;
 }
 
 /*  */
 #anime-A {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
-    animation: myAnimA 2s ease 0s 1 normal forwards;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  animation: myAnimA 2s ease 0s 1 normal forwards;
 }
 
-
-
 #anime-B {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2%;
-    animation: myAnimB 2s ease 2s 1 normal forwards;
-    visibility: hidden;
-
-
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+  animation: myAnimB 2s ease 2s 1 normal forwards;
+  visibility: hidden;
 }
 
 #anime-C {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
-    animation: myAnimC 2s ease 3s 1 normal forwards;
-    visibility: hidden;
-
-
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  animation: myAnimC 2s ease 3s 1 normal forwards;
+  visibility: hidden;
 }
 
 #anime-D {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
-    animation: myAnimD 2s ease 4s 1 normal forwards;
-    visibility: hidden;
-
-
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  animation: myAnimD 2s ease 4s 1 normal forwards;
+  visibility: hidden;
 }
 
 #anime-E {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
-    animation: myAnimE 2s ease 5s 1 normal forwards;
-    visibility: hidden;
-
-
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  animation: myAnimE 2s ease 5s 1 normal forwards;
+  visibility: hidden;
 }
 
 #anime-F {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
-    animation: myAnimF 2s ease 6s 1 normal forwards;
-    visibility: hidden;
-
-
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  animation: myAnimF 2s ease 6s 1 normal forwards;
+  visibility: hidden;
 }
 
 /*  */
 #anime-G {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
-    animation: myAnimG 2s ease 7s 1 normal forwards;
-    visibility: hidden;
-
-
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  animation: myAnimG 2s ease 7s 1 normal forwards;
+  visibility: hidden;
 }
 
 #anime-H {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2%;
-    animation: myAnimH 2s ease 8s 1 normal forwards;
-    visibility: hidden;
-
-
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+  animation: myAnimH 2s ease 8s 1 normal forwards;
+  visibility: hidden;
 }
 
 #anime-I {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2%;
-    animation: myAnimI 2s ease 9s 1 normal forwards;
-    visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  animation: myAnimI 2s ease 9s 1 normal forwards;
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 468px) {
-
-    #anime-A,
-    #anime-B,
-    #anime-C,
-    #anime-D,
-    #anime-E,
-    #anime-F,
-    #anime-G,
-    #anime-H {
-        margin-bottom: 10%;
-    }
+  #anime-A,
+  #anime-B,
+  #anime-C,
+  #anime-D,
+  #anime-E,
+  #anime-F,
+  #anime-G,
+  #anime-H {
+    margin-bottom: 10%;
+  }
 }
 
 .size-conhecimento {
-    font-size: 70%;
+  font-size: 70%;
 }
 
 @keyframes myAnimA {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimB {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimC {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimD {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimE {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimF {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimG {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimH {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes myAnimI {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
