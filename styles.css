@@ -443,70 +443,171 @@ body.active .toggle-btn {
   }
 }
 
+@keyframes progressA {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 40%
+  }
+}
+
+
+
 .progress-A {
-  width: 40%;
+  width: 0%;
   /* Define o progresso da barra */
   height: 100%;
   background-color: #f0680e;
   /* Cor da barra de progresso */
   transition: width 0.5s ease-in-out;
   /* Adiciona uma transição suave */
+  animation: progressA 2s ease 2s 1 normal forwards;
+}
+
+@keyframes progressB {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 50%;
+  }
 }
 
 .progress-B {
-  width: 40%;
+  width: 0%;
   height: 100%;
   background-color: #f0680e;
   transition: width 0.5s ease-in-out;
+  animation: progressB 2s ease 3s 1 normal forwards;
+}
+
+@keyframes progressC {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 60%;
+  }
 }
 
 .progress-C {
-  width: 50%;
+  width: 0%;
   height: 100%;
   background-color: #007bff;
   transition: width 0.5s ease-in-out;
+  animation: progressC 2s ease 4s 1 normal forwards;
+}
+
+@keyframes progressD {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 80%;
+  }
 }
 
 .progress-D {
-  width: 80%;
+  width: 0%;
   height: 100%;
   background-color: #c0eca2;
   transition: width 0.5s ease-in-out;
+  animation: progressD 2s ease 5s 1 normal forwards;
+}
+
+@keyframes progressE {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
 }
 
 .progress-E {
-  width: 70%;
+  width: 0%;
   height: 100%;
   background-color: #c0eca2;
   transition: width 0.5s ease-in-out;
+  animation: progressE 2s ease 6s 1 normal forwards;
+}
+
+@keyframes progressF {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 50%;
+  }
 }
 
 .progress-F {
-  width: 50%;
+  width: 0%;
   height: 100%;
   background-color: #007bff;
   transition: width 0.5s ease-in-out;
+  animation: progressF 2s ease 7s 1 normal forwards;
+}
+
+@keyframes progressG {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 45%;
+  }
 }
 
 .progress-G {
-  width: 45%;
+  width: 0%;
   height: 100%;
   background-color: #f0b30e;
   transition: width 0.5s ease-in-out;
+  animation: progressG 2s ease 8s 1 normal forwards;
+}
+
+@keyframes progressH {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 80%;
+  }
 }
 
 .progress-H {
-  width: 80%;
+  width: 0%;
   height: 100%;
   background-color: #c0eca2;
   transition: width 0.5s ease-in-out;
+  animation: progressH 2s ease 9s 1 normal forwards;
+}
+
+@keyframes progressI {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
 }
 
 .progress-I {
-  width: 70%;
+  width: 0%;
   height: 100%;
   background-color: #c0eca2;
   transition: width 0.5s ease-in-out;
+  animation: progressI 2s ease 10s 1 normal forwards;
 }
 
 /*  */
