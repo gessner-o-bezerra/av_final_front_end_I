@@ -392,6 +392,7 @@ body.active .toggle-btn {
 
 @media only screen and (min-width: 700px) {
   .user-avatar:hover {
+    margin-left: 15px;
     scale: 2.2;
   }
 }
